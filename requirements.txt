@@ -1,0 +1,4 @@
+arrow
+requests-cache
+pandas
+lz4
