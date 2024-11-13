@@ -100,10 +100,14 @@ class HegeHistory:
 
             x = [i[0].datetime for i in signals.index]
             y = signals[asn_to_plot]
+            labels = signals[asn_to_plot].columns
             plt.plot(x, y)
-            plt.savefig('diffbytes.png')
             plt.title(f"Dependencies of AS{asn}")
+            plt.legend(labels, loc='upper center', ncols=8, bbox_to_anchor=(0, -0.2, 1, 1.5))
+            plt.xticks(rotation=90)
+            plt.tight_layout()
             plt.savefig(f"dependencies_AS{asn}.pdf")
+            plt.close()
 
 
 def main():
